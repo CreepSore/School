@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Fruit.cs" />
     <Compile Include="Entities\Wall.cs" />
     <Compile Include="Input.cs" />
     <Compile Include="Interfaces\IDrawable.cs" />

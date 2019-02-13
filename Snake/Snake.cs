@@ -27,10 +27,11 @@ namespace Snake
 
         public Snake()
         {
-            this.MainTimer = new Timer(64);
+            this.MainTimer = new Timer(10);
             this.MainInput = new Input();
 
             entities.Add(new Wall());
+            entities.Add(new Fruit(5,8));
         }
 
         public void Start()
@@ -51,7 +52,14 @@ namespace Snake
                     continue;
                 }
 
+                Program.InitConsole();
+
                 Console.Clear();
+                foreach (IEntity ent in entities)
+                {
+                    ent.Tick();
+                    ent.Draw();
+                }
             }
         }
     }

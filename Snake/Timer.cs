@@ -12,7 +12,7 @@ namespace Snake
         long latestTick;
 
         public int TPS { get; }
-        public float Speed { get; set; }
+        public float Speed { get; set; } = 1.0f;
 
         public Timer(int TPS)
         {

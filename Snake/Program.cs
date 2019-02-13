@@ -20,10 +20,12 @@ namespace Snake
             Console.ReadKey(true);
         }
 
-        static void InitConsole()
+        public static void InitConsole()
         {
             Console.BackgroundColor = ConsoleColor.Cyan;
             Console.ForegroundColor = ConsoleColor.Black;
+
+            Console.CursorVisible = false;
 
             Console.SetWindowSize(WIN_WIDTH, WIN_HEIGHT);
             Console.SetBufferSize(WIN_WIDTH, WIN_HEIGHT);

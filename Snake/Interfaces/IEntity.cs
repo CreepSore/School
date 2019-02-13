@@ -11,7 +11,7 @@ namespace Snake.Interfaces
         Snake Game { get; set; }
         bool DoUpdate { get; set; }
 
-        int x { get;set; }
-        int y { get; set; }
+        float x { get;set; }
+        float y { get; set; }
     }
 }

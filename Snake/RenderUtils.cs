@@ -29,7 +29,7 @@ namespace Snake
         public static void DrawRectangle(int offsetX, int offsetY, int width, int height, char character)
         {
             DrawHorizontalLine(offsetX, offsetY, width, character);
-            DrawHorizontalLine(offsetX, offsetY + height, width, character);
+            DrawHorizontalLine(offsetX, offsetY + height, width + 1, character);
 
             DrawVerticalLine(offsetX, offsetY, height, character);
             DrawVerticalLine(offsetX + width, offsetY, height, character);
