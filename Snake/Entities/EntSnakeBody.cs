@@ -7,30 +7,34 @@ using System.Threading.Tasks;
 
 namespace Snake.Entities
 {
-    public class Fruit : IEntity
+    public class EntSnakeBody : IEntity
     {
+
         public Snake Game { get; set; }
         public bool DoUpdate { get; set; } = false;
         public float x { get; set; }
         public float y { get; set; }
 
-        public Fruit(int x, int y, Snake game)
+        public EntSnake Parent { get; set; }
+
+        public EntSnakeBody(float x, float y, EntSnake parent, Snake game)
         {
+            this.Game = game;
             this.x = x;
             this.y = y;
-            this.Game = game;
+            this.Parent = parent;
         }
 
         public void Draw()
         {
             Console.SetCursorPosition((int)x, (int)y);
-            Console.Write('+');
+            Console.Write(Snake.SNAKE_BODY_CHAR);
         }
 
         int dir = 0;
         public void Tick()
         {
-            // TODO: Snake collision check
+            // Gets Handled in Parent Snake
         }
     }
 }

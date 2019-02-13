@@ -15,7 +15,7 @@ namespace Snake
         public const char WALL_CHAR = '#';
 
         public const char SNAKE_HEAD_CHAR = 'O';
-        public const char SNAKE_BODY_CHAR = '#';
+        public const char SNAKE_BODY_CHAR = '+';
 
         public Timer MainTimer { get; }
         public Input MainInput { get; }
@@ -27,11 +27,11 @@ namespace Snake
 
         public Snake()
         {
-            this.MainTimer = new Timer(10);
+            this.MainTimer = new Timer(16);
             this.MainInput = new Input();
 
             entities.Add(new Wall());
-            entities.Add(new Fruit(5,8));
+            entities.Add(new EntSnake(5,8, 3, this));
         }
 
         public void Start()
@@ -55,6 +55,10 @@ namespace Snake
                 Program.InitConsole();
 
                 Console.Clear();
+                this.MainInput.KeyIsPressed = false;
+                this.MainInput.PressedKey = (int)ConsoleKey.NoName;
+                this.MainInput.Tick();
+
                 foreach (IEntity ent in entities)
                 {
                     ent.Tick();
