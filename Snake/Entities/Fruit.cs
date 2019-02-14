@@ -21,16 +21,25 @@ namespace Snake.Entities
             this.Game = game;
         }
 
+        public bool CheckCollision(IEntity ent)
+        {
+            if(this.x == ent.x && this.y == ent.y)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         public void Draw()
         {
             Console.SetCursorPosition((int)x, (int)y);
             Console.Write('+');
         }
 
-        int dir = 0;
         public void Tick()
         {
-            // TODO: Snake collision check
+            // Collision-Checking gets done in EntSnake
         }
     }
 }

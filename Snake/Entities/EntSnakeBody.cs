@@ -31,7 +31,6 @@ namespace Snake.Entities
             Console.Write(Snake.SNAKE_BODY_CHAR);
         }
 
-        int dir = 0;
         public void Tick()
         {
             // Gets Handled in Parent Snake

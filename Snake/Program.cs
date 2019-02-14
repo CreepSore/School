@@ -8,8 +8,8 @@ namespace Snake
 {
     class Program
     {
-        public const int WIN_WIDTH = 40;
-        public const int WIN_HEIGHT = 20;
+        public const int WIN_WIDTH = 60;
+        public const int WIN_HEIGHT = 30;
 
         static void Main(string[] args)
         {

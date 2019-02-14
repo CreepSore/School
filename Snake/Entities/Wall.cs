@@ -14,10 +14,31 @@ namespace Snake.Entities
         public float x { get; set; } = 1;
         public float y { get; set; } = 1;
 
+        public float height { get; set; }
+        public float width { get; set; }
 
-        public Wall()
+
+        public Wall(float x, float y, float width, float height)
         {
-            
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+        }
+
+        public bool CheckCollision(IEntity ent)
+        {
+            bool leftWall = (ent.y >= this.y && ent.y <= this.y + height && ent.x == x);
+            bool rightWall = (ent.y >= this.y && ent.y <= this.y + height && ent.x == x + width);
+            bool topWall = (ent.x >= this.x && ent.x <= this.x + width && ent.y == y);
+            bool bottomWall = (ent.x >= this.x && ent.x <= this.x + width && ent.y == y + height);
+
+            if (leftWall || rightWall || topWall || bottomWall)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public void Draw()
