@@ -15,6 +15,9 @@ namespace Snake.Entities
         public float x { get; set; }
         public float y { get; set; }
 
+        public float lastX { get; set; }
+        public float lastY { get; set; }
+
         public EntSnake Parent { get; set; }
 
         public EntSnakeBody(float x, float y, EntSnake parent, Snake game)
@@ -33,6 +36,8 @@ namespace Snake.Entities
 
         public void Tick()
         {
+            this.lastX = this.x;
+            this.lastY = this.y;
             // Gets Handled in Parent Snake
         }
     }

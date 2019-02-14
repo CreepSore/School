@@ -1,9 +1,6 @@
 ﻿using Snake.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Snake.Entities
 {
@@ -46,7 +43,7 @@ namespace Snake.Entities
         int dir = 0;
         public void Tick()
         {
-            if(!this.DoUpdate)
+            if (!this.DoUpdate)
             {
                 return;
             }
@@ -118,7 +115,16 @@ namespace Snake.Entities
                         FruitCollision = true;
                         this.Game.DespawnEntity(f);
                         this.Game.SpawnFruit();
+                        
+                        // Spawn another Fruit every 500 Points
+                        if(this.Game.Score % 1000 == 400)
+                        {
+                            this.Game.SpawnFruit();
+                        }
+
                         this.Game.Score += Snake.FRUIT_SCORE;
+
+                        this.Game.MainTimer.Speed += 0.1f;
                         break;
                     }
                 }
@@ -129,7 +135,7 @@ namespace Snake.Entities
                     this.Game.IsRunning = false;
                 }
 
-                if ((dir >= -2 && dir <= 2 )&& (FruitCollision || this.CurrentLength < this.InitialLength))
+                if ((dir >= -2 && dir <= 2) && (FruitCollision || this.CurrentLength < this.InitialLength))
                 {
                     Grow();
                 }
@@ -141,14 +147,14 @@ namespace Snake.Entities
 
         public bool CheckOwnCollision()
         {
-            foreach(EntSnakeBody part in bodyparts)
+            foreach (EntSnakeBody part in bodyparts)
             {
-                if(bodyparts.IndexOf(part) < 4)
+                if (bodyparts.IndexOf(part) < 4)
                 {
                     continue;
                 }
 
-                if(part.x == this.x && part.y == this.y)
+                if (part.x == this.x && part.y == this.y)
                 {
                     return true;
                 }

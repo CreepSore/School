@@ -22,8 +22,8 @@ namespace Snake
 
         public static void InitConsole()
         {
-            Console.BackgroundColor = ConsoleColor.Cyan;
-            Console.ForegroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Red;
 
             Console.CursorVisible = false;
 

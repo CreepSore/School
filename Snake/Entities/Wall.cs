@@ -43,7 +43,7 @@ namespace Snake.Entities
 
         public void Draw()
         {
-            RenderUtils.DrawRectangle((int)x, (int)y, Program.WIN_WIDTH - 3, Program.WIN_HEIGHT - 3, Snake.WALL_CHAR);
+            RenderUtils.DrawRectangle((int)x, (int)y, (int)this.width, (int)this.height, Snake.WALL_CHAR);
         }
 
         public void Tick()

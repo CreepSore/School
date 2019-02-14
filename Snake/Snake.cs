@@ -33,13 +33,18 @@ namespace Snake
 
         public Snake()
         {
-            this.MainTimer = new Timer(16);
+            this.MainTimer = new Timer(8);
             this.MainInput = new Input();
 
-            entities.Add(new Wall(1, 1, Program.WIN_WIDTH - 3, Program.WIN_HEIGHT - 3));
+            this.SetupMap();
             entities.Add(new EntSnake(Program.WIN_WIDTH / 2, Program.WIN_HEIGHT / 2, 4, this));
 
             this.SpawnFruit();
+        }
+
+        public void SetupMap()
+        {
+            entities.Add(new Wall(1, 1, Program.WIN_WIDTH - 3, Program.WIN_HEIGHT - 3));
         }
 
         public void Start()
