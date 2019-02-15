@@ -30,8 +30,7 @@ namespace Snake.Entities
 
         public void Draw()
         {
-            Console.SetCursorPosition((int)x, (int)y);
-            Console.Write(Snake.SNAKE_BODY_CHAR);
+            this.Game.MainDisplay.CurrentBuffer.SetChar((int)x, (int)y, Snake.SNAKE_BODY_CHAR, ConsoleColor.Green);
         }
 
         public void Tick()

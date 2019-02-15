@@ -1,9 +1,4 @@
 ﻿using Snake.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Snake.Entities
 {
@@ -18,8 +13,9 @@ namespace Snake.Entities
         public float width { get; set; }
 
 
-        public Wall(float x, float y, float width, float height)
+        public Wall(float x, float y, float width, float height, Snake game)
         {
+            this.Game = game;
             this.x = x;
             this.y = y;
             this.width = width;
@@ -43,7 +39,15 @@ namespace Snake.Entities
 
         public void Draw()
         {
-            RenderUtils.DrawRectangle((int)x, (int)y, (int)this.width, (int)this.height, Snake.WALL_CHAR);
+            // TOP
+            this.Game.MainDisplay.CurrentBuffer.DrawLine(1, 1, 1 + (int)this.width, 1, Snake.WALL_CHAR);
+            // BOTTOM
+            this.Game.MainDisplay.CurrentBuffer.DrawLine(1, 1 + (int)this.height, 1 + (int)this.width, 1 + (int)this.height, Snake.WALL_CHAR);
+            // LEFT
+            this.Game.MainDisplay.CurrentBuffer.DrawLine(1, 1, 1, 1 + (int)this.height, Snake.WALL_CHAR);
+            // RIGHT
+            this.Game.MainDisplay.CurrentBuffer.DrawLine(1 + (int)this.width, 1, 1 + (int)this.width, 1 + (int)this.height + 1, Snake.WALL_CHAR);
+
         }
 
         public void Tick()

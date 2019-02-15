@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Snake.Rendering;
+using System;
 
 namespace Snake
 {
@@ -14,6 +11,7 @@ namespace Snake
         static void Main(string[] args)
         {
             InitConsole();
+
             Snake s = new Snake();
             s.Start();
 

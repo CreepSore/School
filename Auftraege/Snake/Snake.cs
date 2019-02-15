@@ -1,5 +1,6 @@
 ﻿using Snake.Entities;
 using Snake.Interfaces;
+using Snake.Rendering;
 using System;
 using System.Collections.Generic;
 
@@ -20,6 +21,7 @@ namespace Snake
 
         public Timer MainTimer { get; }
         public Input MainInput { get; }
+        public Display MainDisplay { get; }
         public IEntity MainSnake { get; set; }
 
         public int Score { get; set; }
@@ -35,6 +37,7 @@ namespace Snake
         {
             this.MainTimer = new Timer(8);
             this.MainInput = new Input();
+            this.MainDisplay = new Display(-1, -1);
 
             this.SetupMap();
             entities.Add(new EntSnake(Program.WIN_WIDTH / 2, Program.WIN_HEIGHT / 2, 4, this));
@@ -44,7 +47,7 @@ namespace Snake
 
         public void SetupMap()
         {
-            entities.Add(new Wall(1, 1, Program.WIN_WIDTH - 3, Program.WIN_HEIGHT - 3));
+            entities.Add(new Wall(1, 1, Program.WIN_WIDTH - 3, Program.WIN_HEIGHT - 3, this));
         }
 
         public void Start()
@@ -63,6 +66,7 @@ namespace Snake
 
                 // Has to be Ticked every Loop, so no Keypresses will be lost
                 this.MainInput.Tick();
+
                 if (!MainTimer.RunTick())
                 {
                     continue;
@@ -70,20 +74,21 @@ namespace Snake
 
                 Program.InitConsole();
 
-                Console.Clear();
-
                 foreach (IEntity ent in entities)
                 {
                     ent.Tick();
                     ent.Draw();
                 }
 
-                Console.SetCursorPosition(0, 0);
-                Console.Write("Score: {0}", this.Score);
-
                 this.DespawnQueuedEntities();
                 this.SpawnQueuedEntities();
 
+                this.MainDisplay.CurrentBuffer.ClearArea(0, 0, 10, 0);
+                this.MainDisplay.CurrentBuffer.SetText(0, 0, string.Format("Score: {0}", this.Score));
+                this.MainDisplay.Draw();
+                this.MainDisplay.CurrentBuffer.ClearArea(2, 2, Program.WIN_WIDTH - 3, Program.WIN_HEIGHT - 3);
+
+                // Reset Input
                 this.MainInput.KeyIsPressed = false;
                 this.MainInput.PressedKey = (int)ConsoleKey.NoName;
             }
@@ -133,30 +138,27 @@ namespace Snake
             this.markedForDespawn.Clear();
         }
 
-        public List<Wall> GetWalls()
+        public List<T> GetEntitiesByType<T>()
         {
-            List<Wall> walls = new List<Wall>();
-            foreach (IEntity w in this.entities)
+            List<T> ents = new List<T>();
+            foreach (IEntity o in this.entities)
             {
-                if (w is Wall)
+                if (o is T)
                 {
-                    walls.Add((Wall)w);
+                    ents.Add((T)o);
                 }
             }
-            return walls;
+            return ents;
+        }
+
+        public List<Wall> GetWalls()
+        {
+            return GetEntitiesByType<Wall>();
         }
 
         public List<Fruit> GetFruits()
         {
-            List<Fruit> fruits = new List<Fruit>();
-            foreach (IEntity f in this.entities)
-            {
-                if (f is Fruit)
-                {
-                    fruits.Add((Fruit)f);
-                }
-            }
-            return fruits;
+            return GetEntitiesByType<Fruit>();
         }
     }
 }

@@ -36,8 +36,7 @@ namespace Snake.Entities
                 body.Draw();
             }
 
-            Console.SetCursorPosition((int)x, (int)y);
-            Console.Write(Snake.SNAKE_HEAD_CHAR);
+            this.Game.MainDisplay.CurrentBuffer.SetChar((int)x, (int)y, Snake.SNAKE_HEAD_CHAR, ConsoleColor.Green);
         }
 
         int dir = 0;
