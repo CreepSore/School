@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{617B9EE9-3973-4532-AA09-F1A236A483BC}</ProjectGuid>
+    <ProjectGuid>{AE77A10A-7E9B-414F-9BE8-F0A9B3596A8F}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>ExternalHack</RootNamespace>
+    <RootNamespace>CrackingTest</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -154,7 +154,7 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ExternalHack.cpp" />
+    <ClCompile Include="CrackingTest.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
