@@ -136,6 +136,8 @@ namespace Snake.Rendering
             }
 
             this.buffer[x, y] = c;
+            this.foregroundColors[x, y] = foreground;
+            this.backgroundColors[x, y] = background;
         }
 
         public void SetText(int x, int y, string text, bool vertical = false,

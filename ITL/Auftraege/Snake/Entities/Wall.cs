@@ -40,13 +40,13 @@ namespace Snake.Entities
         public void Draw()
         {
             // TOP
-            this.Game.MainDisplay.CurrentBuffer.DrawLine(1, 1, 1 + (int)this.width, 1, Snake.WALL_CHAR);
+            this.Game.MainDisplay.CurrentBuffer.DrawLine(1, 1, 1 + (int)this.width, 1, Snake.WALL_CHAR, System.ConsoleColor.White, System.ConsoleColor.White);
             // BOTTOM
-            this.Game.MainDisplay.CurrentBuffer.DrawLine(1, 1 + (int)this.height, 1 + (int)this.width, 1 + (int)this.height, Snake.WALL_CHAR);
+            this.Game.MainDisplay.CurrentBuffer.DrawLine(1, 1 + (int)this.height, 1 + (int)this.width, 1 + (int)this.height, Snake.WALL_CHAR, System.ConsoleColor.White, System.ConsoleColor.White);
             // LEFT
-            this.Game.MainDisplay.CurrentBuffer.DrawLine(1, 1, 1, 1 + (int)this.height, Snake.WALL_CHAR);
+            this.Game.MainDisplay.CurrentBuffer.DrawLine(1, 1, 1, 1 + (int)this.height, Snake.WALL_CHAR, System.ConsoleColor.White, System.ConsoleColor.White);
             // RIGHT
-            this.Game.MainDisplay.CurrentBuffer.DrawLine(1 + (int)this.width, 1, 1 + (int)this.width, 1 + (int)this.height + 1, Snake.WALL_CHAR);
+            this.Game.MainDisplay.CurrentBuffer.DrawLine(1 + (int)this.width, 1, 1 + (int)this.width, 1 + (int)this.height + 1, Snake.WALL_CHAR, System.ConsoleColor.White, System.ConsoleColor.White);
 
         }
 

@@ -12,10 +12,10 @@ namespace Snake
 
         public const char WALL_CHAR = '#';
 
-        public const char SNAKE_HEAD_CHAR = 'O';
+        public const char SNAKE_HEAD_CHAR = (char)1;
         public const char SNAKE_BODY_CHAR = '+';
 
-        public const char FOOD_CHAR = '·';
+        public const char FOOD_CHAR = (char)4;
 
         public const int FRUIT_SCORE = 100;
 
@@ -86,7 +86,7 @@ namespace Snake
                 this.MainDisplay.CurrentBuffer.ClearArea(0, 0, 10, 0);
                 this.MainDisplay.CurrentBuffer.SetText(0, 0, string.Format("Score: {0}", this.Score));
                 this.MainDisplay.Draw();
-                this.MainDisplay.CurrentBuffer.ClearArea(2, 2, Program.WIN_WIDTH - 3, Program.WIN_HEIGHT - 3);
+                this.MainDisplay.CurrentBuffer.ClearArea(2, 2, Program.WIN_WIDTH - 2, Program.WIN_HEIGHT - 2);
 
                 // Reset Input
                 this.MainInput.KeyIsPressed = false;
