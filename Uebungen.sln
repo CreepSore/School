@@ -47,7 +47,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cracking", "Cracking", "{4F
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CrackingTest", "DUK\Referate\ReverseEngineering\CrackingTest\CrackingTest.vcxproj", "{AE77A10A-7E9B-414F-9BE8-F0A9B3596A8F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Payload", "Payload\Payload.vcxproj", "{EEC00772-BAE2-4C91-877C-BEAC86BDA2BE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Payload", "DUK\Referate\ReverseEngineering\Payload\Payload.vcxproj", "{EEC00772-BAE2-4C91-877C-BEAC86BDA2BE}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Injector", "DUK\Referate\ReverseEngineering\Injector\Injector.vcxproj", "{D8789E81-DE35-497A-B4A0-CED6F800D1C9}"
 EndProject

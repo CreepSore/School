@@ -9,7 +9,7 @@
 BOOL __stdcall mainThread(void* hModule) {
 	MessageBox(NULL, TEXT("Injection successfully completed"), TEXT("Succeeded"), MB_OK | MB_ICONINFORMATION);
 	
-	std::fstream input = std::fstream("addr.conf", 3, 64);
+	std::fstream input = std::fstream("C:\tmp\addr.conf", 3, 64);
 
 	DWORD address;
 	input >> std::hex >> address;
