@@ -16,6 +16,9 @@ int main()
 	std::cout << "Injecting payload ..." << std::endl;
 
 	InjectDLL(pid, "Payload.dll");
+
+	char input[255];
+	std::cin >> input;
 }
 
 void InjectDLL(DWORD pid, const char * filename) {
@@ -33,4 +36,6 @@ void InjectDLL(DWORD pid, const char * filename) {
 	std::cout << "Thread Handle: " << hThread << std::endl;
 
 	CloseHandle(hProc);
+
+	std::cout << "Successfully injected Payload!" << std::endl;
 }
