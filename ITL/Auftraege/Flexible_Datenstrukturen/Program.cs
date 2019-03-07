@@ -9,6 +9,12 @@ namespace Flexible_Datenstrukturen
         static void Main(string[] args)
         {
 
+            Run(@"C:\Tmp\students1.dat");
+            Console.WriteLine();
+            Run(@"C:\Tmp\students2.dat");
+            Console.WriteLine();
+            Run(@"C:\Tmp\students3.dat");
+            Console.WriteLine();
             Run(@"C:\Tmp\students4.dat");
             Console.ReadKey(true);
 
