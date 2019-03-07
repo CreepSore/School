@@ -51,11 +51,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Payload", "DUK\Referate\Rev
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Injector", "DUK\Referate\ReverseEngineering\Injector\Injector.vcxproj", "{D8789E81-DE35-497A-B4A0-CED6F800D1C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uebung6", "Uebungen\Uebung6\Uebung6.csproj", "{0D015149-D769-4D37-953A-6906F5E007A0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uebung6", "ITL\Uebungen\Uebung6\Uebung6.csproj", "{0D015149-D769-4D37-953A-6906F5E007A0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AA_04", "AA_04", "{0DCDFED7-42A3-4D6D-A624-B6E0131379B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Files_Strings_Arrays", "Auftraege\Files_Strings_Arrays\Files_Strings_Arrays.csproj", "{9E8003CF-538E-4468-A3AF-28DD5BE81402}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Files_Strings_Arrays", "ITL\Auftraege\Files_Strings_Arrays\Files_Strings_Arrays.csproj", "{9E8003CF-538E-4468-A3AF-28DD5BE81402}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

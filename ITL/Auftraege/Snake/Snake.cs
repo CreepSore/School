@@ -40,7 +40,7 @@ namespace Snake
             this.MainDisplay = new Display(-1, -1);
 
             this.SetupMap();
-            entities.Add(new EntSnake(Program.WIN_WIDTH / 2, Program.WIN_HEIGHT / 2, 4, this));
+            entities.Add(new EntSnake(Program.WIN_WIDTH / 2, Program.WIN_HEIGHT / 2, 0, this));
 
             this.SpawnFruit();
         }
