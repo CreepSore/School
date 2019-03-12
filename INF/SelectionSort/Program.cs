@@ -12,7 +12,7 @@ namespace SelectionSort
         {
 
             int[] toSort = { 10, 82, 3, 92, 87, 7, 19 };
-            toSort = SelectionSort(toSort);
+            SelectionSort(ref toSort);
 
             foreach (int num in toSort)
             {
@@ -22,7 +22,7 @@ namespace SelectionSort
             Console.ReadKey(true);
         }
 
-        public static int[] SelectionSort(int[] toSort)
+        public static void SelectionSort(ref int[] toSort)
         {
             for (int i = 0; i < toSort.Length - 1; i++)
             {
@@ -39,8 +39,6 @@ namespace SelectionSort
                 toSort[smallestIndex] = toSort[i];
                 toSort[i] = tmp;
             }
-
-            return toSort;
         }
     }
 }
