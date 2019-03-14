@@ -41,8 +41,8 @@ namespace Flexible_Datenstrukturen
                 return;
             }
             average = 0;
-
             name = line.Substring(0, line.IndexOf(':'));
+
             string[] grades = line.Substring(line.IndexOf(':')).Split(',');
             int correctGrades = 0;
             for (int i = 0; i < grades.Length; i++)
