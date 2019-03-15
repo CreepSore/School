@@ -7,6 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" MinWidth="450" MinHeight="450">
     <Grid>
+        <Grid.Resources>
+            <Style TargetType="Border">
+                <Setter Property="Margin" Value="10 5 10 5"/>
+                <Setter Property="BorderBrush" Value="Black"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="CornerRadius" Value="5"/>
+            </Style>
+        </Grid.Resources>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -17,8 +26,37 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
+       
+        
         <Menu Grid.Row="0" Grid.Column="0">
-            
+            <MenuItem Header="_Datei">
+                <MenuItem Header="_Neu"/>
+                <Separator/>
+                <MenuItem Header="E_xit"/>
+            </MenuItem>
         </Menu>
+
+        <Border Grid.Row="1" Grid.Column="0">
+            <TextBox Text="INF" TextAlignment="Center"/>
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="0">
+            <Grid>
+                
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="3" Grid.Column="0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Text="Notendurchschnitt" TextAlignment="Center"/>
+            </StackPanel>
+        </Border>
+        
+        <Border Grid.Row="4" Grid.Column="0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="R" Width="50" Margin="5 5 5 5"/>
+                <Button Content="F" Width="50" Margin="5 5 5 5"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>
