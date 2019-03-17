@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Files_Strings_Arrays
 {
@@ -17,7 +18,8 @@ namespace Files_Strings_Arrays
                 System.Environment.Exit(0);
             }
 
-            RunNormal(filePath);
+            //RunNormal(filePath);
+            RunDict(filePath);
 
             Console.WriteLine("Press any key to exit ...");
             Console.ReadKey(true);
@@ -34,11 +36,33 @@ namespace Files_Strings_Arrays
             Console.WriteLine();
         }
 
+        static void RunDict(string path)
+        {
+            Dictionary<string, int> count = StringUtils.CountSameWords(path);
+            foreach(KeyValuePair<string, int> val in count)
+            {
+                Console.WriteLine("{0} = {1}", val.Key.PadRight(15), val.Value);
+            }
+
+            var result = StringUtils.CreateIndex(path);
+            foreach (KeyValuePair<string, List<int>> val in result)
+            {
+                Console.WriteLine($"{val.Key} = {{");
+                foreach(int line in val.Value)
+                {
+                    Console.WriteLine("\t{0}", line);
+                }
+                Console.WriteLine("}}");
+            }
+            Console.WriteLine();
+
+        }
+
         static void InitConsole()
         {
             Console.SetWindowSize(80, 10);
-            Console.SetBufferSize(80, 10);
-            Console.SetWindowSize(80, 10);
+            //Console.SetBufferSize(80, 10);
+            //Console.SetWindowSize(80, 10);
 
             Console.ForegroundColor = ConsoleColor.Black;
             Console.BackgroundColor = ConsoleColor.White;

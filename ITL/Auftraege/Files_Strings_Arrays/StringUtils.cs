@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Files_Strings_Arrays
 {
@@ -20,10 +21,13 @@ namespace Files_Strings_Arrays
         {
             if (!System.IO.File.Exists(path)) return -1;
             string text = System.IO.File.ReadAllText(path, System.Text.Encoding.UTF8);
-            text = text.Replace(',', ' ');
-            text = text.Replace('.', ' ');
+            string toReplace = ",.\n\r";
+            foreach (char c in toReplace)
+            {
+                text = text.Replace(c, ' ');
+            }
 
-            while(text.Contains("  "))
+            while (text.Contains("  "))
             {
                 text = text.Replace("  ", " ");
             }
@@ -65,6 +69,74 @@ namespace Files_Strings_Arrays
             }
 
             return count;
+        }
+
+        public static Dictionary<string, int> CountSameWords(string path)
+        {
+            string text = System.IO.File.ReadAllText(path);
+            string toReplace = ",.\n\r";
+            foreach(char c in toReplace)
+            {
+                text = text.Replace(c, ' ');
+            }
+
+            while (text.Contains("  "))
+            {
+                text = text.Replace("  ", " ");
+            }
+
+            Dictionary<string, int> result = new Dictionary<string, int>();
+
+            string[] words = text.Split(' ');
+            for(int i = 0; i < words.Length; i++)
+            {
+                words[i] = words[i].Trim();
+            }
+            
+            foreach (string word in words)
+            {
+                if (result.ContainsKey(word))
+                {
+                    result[word]++;
+                }
+                else
+                {
+                    result.Add(word, 1);
+                }
+            }
+
+            return result;
+        }
+
+        public static Dictionary<string, List<int>> CreateIndex(string path)
+        {
+            string[] lines = System.IO.File.ReadAllLines(path);
+            Dictionary<string, List<int>> result = new Dictionary<string, List<int>>();
+
+
+            string toReplace = ",.\n\r";
+            for (int i = 0; i < lines.Length; i++)
+            {
+                foreach (char c in toReplace)
+                {
+                    lines[i] = lines[i].Replace(c, ' ').Trim();
+                }
+
+                string[] words = lines[i].Split(' ');
+                foreach(string word in words)
+                {
+                    if(!result.ContainsKey(word))
+                    {
+                        result.Add(word, new List<int>());
+                    }
+                    if (!result[word].Contains(i + 1))
+                    {
+                        result[word].Add(i + 1);
+                    }
+                }
+            }
+
+            return result;
         }
     }
 }
