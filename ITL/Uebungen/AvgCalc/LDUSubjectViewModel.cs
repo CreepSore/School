@@ -8,7 +8,13 @@ namespace AvgCalc
 {
     class LDUSubjectViewModel : SubjectBase
     {
-
+        public int GradeForAveraging
+        {
+            get
+            {
+                return SubjectGroup.Name == "V" ? (Grade > 1 ? Grade - 1 : Grade) : Grade;
+            }
+        }
         public LDUSubjectViewModel()
         {
             subjectGroups = new List<SubjectGroupModel>()

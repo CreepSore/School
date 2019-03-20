@@ -23,5 +23,10 @@ namespace AvgCalc
 
             DataContext = new SubjectCollection();
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            ((SubjectCollection)this.DataContext).OnTextChange(sender);
+        }
     }
 }

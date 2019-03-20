@@ -53,21 +53,20 @@
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="Note: " HorizontalAlignment="Right"/>
-                <TextBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Text="{Binding CurSubject.Grade}"/>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Note: " HorizontalAlignment="Right" Visibility="{Binding CurSubject.IsExempted, Converter={StaticResource InvVisibilityConverter}}"/>
+                <TextBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" TextChanged="TextBox_TextChanged" Text="{Binding CurSubject.Grade}" Visibility="{Binding CurSubject.IsExempted, Converter={StaticResource InvVisibilityConverter}}"/>
 
-                <TextBlock Grid.Row="1" Grid.Column="0" Visibility="{Binding CurSubject.HasGroups, Converter={StaticResource VisibilityConverter}}" Text="Gruppe: " HorizontalAlignment="Right"/>
-                <ComboBox Grid.Row="1" Grid.Column="1" Visibility="{Binding CurSubject.HasGroups, Converter={StaticResource VisibilityConverter}}" HorizontalAlignment="Stretch" ItemsSource="{Binding CurSubject.SubjectGroups}" SelectedItem="{Binding SubjectGroup}"></ComboBox>
+                <TextBlock Grid.Row="1" Grid.Column="0" Visibility="{Binding CurSubject.IsExempted, Converter={StaticResource InvVisibilityConverter}}" Text="Gruppe: " HorizontalAlignment="Right"/>
+                <ComboBox Grid.Row="1" Grid.Column="1" IsEnabled="{Binding CurSubject.HasGroups}" Visibility="{Binding CurSubject.IsExempted, Converter={StaticResource InvVisibilityConverter}}" HorizontalAlignment="Stretch" ItemsSource="{Binding CurSubject.SubjectGroups}" SelectedItem="{Binding CurSubject.SubjectGroup}"></ComboBox>
                 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="Befreit: " HorizontalAlignment="Right"/>
-                <RadioButton Grid.Row="2" Grid.Column="1" IsChecked="{Binding CurSubject.IsExempted}" HorizontalAlignment="Left">Ja</RadioButton>
-                <RadioButton Grid.Row="2" Grid.Column="1" IsChecked="{Binding CurSubject.IsExempted, Converter={StaticResource InvBoolConverter}}" HorizontalAlignment="Left" Margin="35px 0 0 0">Nein</RadioButton>
+                <CheckBox Grid.Row="2" Grid.Column="1" IsChecked="{Binding CurSubject.IsExempted}" HorizontalAlignment="Left"/>
             </Grid>
         </Border>
 
         <Border Grid.Row="3" Grid.Column="0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox Text="Notendurchschnitt" TextAlignment="Center"/>
+                <TextBox Text="{Binding Average}" IsReadOnly="True" TextAlignment="Center"/>
             </StackPanel>
         </Border>
         

@@ -7,5 +7,6 @@
     <Application.Resources>
         <converter:InvBoolConverter x:Key="InvBoolConverter"/>
         <converter:VisibilityConverter x:Key="VisibilityConverter"/>
+        <converter:InvVisibilityConverter x:Key="InvVisibilityConverter"/>
     </Application.Resources>
 </Application>
