@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AvgCalc"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" MinWidth="450" MinHeight="450">
+        Title="MainWindow" Height="450" Width="450" MinWidth="450" MinHeight="450">
     <Grid>
         <Grid.Resources>
             <Style TargetType="Border">
@@ -37,12 +37,31 @@
         </Menu>
 
         <Border Grid.Row="1" Grid.Column="0">
-            <TextBox Text="INF" TextAlignment="Center"/>
+            <TextBox Text="{Binding CurSubject.Name}" TextAlignment="Center"/>
         </Border>
 
         <Border Grid.Row="2" Grid.Column="0">
             <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Note: " HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Text="{Binding CurSubject.Grade}"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Visibility="{Binding CurSubject.HasGroups, Converter={StaticResource VisibilityConverter}}" Text="Gruppe: " HorizontalAlignment="Right"/>
+                <ComboBox Grid.Row="1" Grid.Column="1" Visibility="{Binding CurSubject.HasGroups, Converter={StaticResource VisibilityConverter}}" HorizontalAlignment="Stretch" ItemsSource="{Binding CurSubject.SubjectGroups}" SelectedItem="{Binding SubjectGroup}"></ComboBox>
                 
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Befreit: " HorizontalAlignment="Right"/>
+                <RadioButton Grid.Row="2" Grid.Column="1" IsChecked="{Binding CurSubject.IsExempted}" HorizontalAlignment="Left">Ja</RadioButton>
+                <RadioButton Grid.Row="2" Grid.Column="1" IsChecked="{Binding CurSubject.IsExempted, Converter={StaticResource InvBoolConverter}}" HorizontalAlignment="Left" Margin="35px 0 0 0">Nein</RadioButton>
             </Grid>
         </Border>
 
@@ -54,8 +73,8 @@
         
         <Border Grid.Row="4" Grid.Column="0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Content="R" Width="50" Margin="5 5 5 5"/>
-                <Button Content="F" Width="50" Margin="5 5 5 5"/>
+                <Button Content="R" Command="{Binding PrevSubjectCmd}" Width="50" Margin="5 5 5 5"/>
+                <Button Content="F" Command="{Binding NextSubjectCmd}" Width="50" Margin="5 5 5 5"/>
             </StackPanel>
         </Border>
     </Grid>

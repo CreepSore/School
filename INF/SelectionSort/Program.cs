@@ -30,7 +30,7 @@ namespace SelectionSort
 
         public static void BubbleSort(ref int[] toSort)
         {
-            bool switched = true;
+            bool switched;
             do
             {
                 switched = false;

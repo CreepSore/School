@@ -55,6 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EmptySubnetViewModel.cs" />
+    <Compile Include="LDUSubjectViewModel.cs" />
+    <Compile Include="SubjectBase.cs" />
+    <Compile Include="SubjectCollection.cs" />
+    <Compile Include="SubjectGroupModel.cs" />
+    <Compile Include="LEUSubjectViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -93,6 +99,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BSWPFLib\BSWPFLib.csproj">
+      <Project>{cef8a66a-398e-4baf-950a-ecef4c393a28}</Project>
+      <Name>BSWPFLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -2,8 +2,10 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:AvgCalc"
+             xmlns:converter="clr-namespace:BSWPFLib.Converter;assembly=BSWPFLib"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <converter:InvBoolConverter x:Key="InvBoolConverter"/>
+        <converter:VisibilityConverter x:Key="VisibilityConverter"/>
     </Application.Resources>
 </Application>
