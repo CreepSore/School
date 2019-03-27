@@ -48,21 +48,21 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button Grid.Row="0" Grid.Column="2" Command="{Binding clickNumButton}">9</Button>
-                    <Button Grid.Row="0" Grid.Column="1" Command="{Binding clickNumButton}">8</Button>
-                    <Button Grid.Row="0" Grid.Column="0" Command="{Binding clickNumButton}">7</Button>
-                    <Button Grid.Row="1" Grid.Column="2" Command="{Binding clickNumButton}">6</Button>
-                    <Button Grid.Row="1" Grid.Column="1" Command="{Binding clickNumButton}">5</Button>
-                    <Button Grid.Row="1" Grid.Column="0" Command="{Binding clickNumButton}">4</Button>
-                    <Button Grid.Row="2" Grid.Column="2" Command="{Binding clickNumButton}">3</Button>
-                    <Button Grid.Row="2" Grid.Column="1" Command="{Binding clickNumButton}">2</Button>
-                    <Button Grid.Row="2" Grid.Column="0" Command="{Binding clickNumButton}">1</Button>
-                    <Button Grid.Row="3" Grid.Column="1" Command="{Binding clickNumButton}">0</Button>
+                    <Button Grid.Row="0" Grid.Column="2" BorderThickness="0" Command="{Binding clickNumButton}">9</Button>
+                    <Button Grid.Row="0" Grid.Column="1" BorderThickness="0" Command="{Binding clickNumButton}">8</Button>
+                    <Button Grid.Row="0" Grid.Column="0" BorderThickness="0" Command="{Binding clickNumButton}">7</Button>
+                    <Button Grid.Row="1" Grid.Column="2" BorderThickness="0" Command="{Binding clickNumButton}">6</Button>
+                    <Button Grid.Row="1" Grid.Column="1" BorderThickness="0" Command="{Binding clickNumButton}">5</Button>
+                    <Button Grid.Row="1" Grid.Column="0" BorderThickness="0" Command="{Binding clickNumButton}">4</Button>
+                    <Button Grid.Row="2" Grid.Column="2" BorderThickness="0" Command="{Binding clickNumButton}">3</Button>
+                    <Button Grid.Row="2" Grid.Column="1" BorderThickness="0" Command="{Binding clickNumButton}">2</Button>
+                    <Button Grid.Row="2" Grid.Column="0" BorderThickness="0" Command="{Binding clickNumButton}">1</Button>
+                    <Button Grid.Row="3" Grid.Column="1" BorderThickness="0" Command="{Binding clickNumButton}">0</Button>
 
-                    <Button Grid.Row="0" Grid.Column="3" Margin="2 2 2 2" Command="{Binding onPlus}">+</Button>
-                    <Button Grid.Row="1" Grid.Column="3" Margin="2 2 2 2" Command="{Binding onMinus}">-</Button>
-                    <Button Grid.Row="2" Grid.Column="3" Margin="2 2 2 2" Command="{Binding onMultiply}">x</Button>
-                    <Button Grid.Row="3" Grid.Column="3" Margin="2 2 2 2" Command="{Binding onDivide}">/</Button>
+                    <Button Grid.Row="0" Grid.Column="3" BorderThickness="0" Command="{Binding onPlus}">+</Button>
+                    <Button Grid.Row="1" Grid.Column="3" BorderThickness="0" Command="{Binding onMinus}">-</Button>
+                    <Button Grid.Row="2" Grid.Column="3" BorderThickness="0" Command="{Binding onMultiply}">x</Button>
+                    <Button Grid.Row="3" Grid.Column="3" BorderThickness="0" Command="{Binding onDivide}">/</Button>
                 </Grid>
             </Grid>
         </Grid>
