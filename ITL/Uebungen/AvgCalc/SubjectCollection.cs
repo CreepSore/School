@@ -103,17 +103,7 @@ namespace AvgCalc
         {
             this.curSubject.grade = ((TextBox)sender).Text;
 
-            double sum = 0;
-            int count = 0;
-            foreach(SubjectBase subj in subjects)
-            {
-                if (!subj.IsExempted && subj.Grade > 0 && subj.Grade <= 5)
-                {
-                    sum += subj.Grade;
-                    count++;
-                }
-            }
-            this.Average = sum / count;
+            this.Average = subjects.Where(x => !x.IsExempted && x.Grade > 0 && x.Grade <= 5).Average(x => x.Grade);
         }
     }
 }

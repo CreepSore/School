@@ -1,0 +1,70 @@
+﻿<Window x:Class="Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator"
+        mc:Ignorable="d"
+        Title="Abstractulator" Height="450" Width="300" MinHeight="450" MinWidth="300">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="24px"/>
+                <RowDefinition Height="50px"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <ComboBox Grid.Row="0"/>
+            <TextBox Grid.Row="1" FontSize="32px" TextAlignment="Right" IsReadOnly="True" Text="{Binding Formula}"/>
+
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".1*"/>
+                    <RowDefinition Height=".1*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Button Margin="2" Padding="10 0 10 0">sqrt</Button>
+                    <Button Margin="2" Padding="10 0 10 0">pow</Button>
+                    <Button Margin="2" Padding="10 0 10 0">mod</Button>
+                    <Button Margin="2" Padding="10 0 10 0">(</Button>
+                    <Button Margin="2" Padding="10 0 10 0">)</Button>
+                    <Button Margin="2" Padding="10 0 10 0" Command="{Binding onDelete}">DEL</Button>
+                </StackPanel>
+
+                <Grid Grid.Row="3" Margin="10 10 10 10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Row="0" Grid.Column="2" Command="{Binding clickNumButton}">9</Button>
+                    <Button Grid.Row="0" Grid.Column="1" Command="{Binding clickNumButton}">8</Button>
+                    <Button Grid.Row="0" Grid.Column="0" Command="{Binding clickNumButton}">7</Button>
+                    <Button Grid.Row="1" Grid.Column="2" Command="{Binding clickNumButton}">6</Button>
+                    <Button Grid.Row="1" Grid.Column="1" Command="{Binding clickNumButton}">5</Button>
+                    <Button Grid.Row="1" Grid.Column="0" Command="{Binding clickNumButton}">4</Button>
+                    <Button Grid.Row="2" Grid.Column="2" Command="{Binding clickNumButton}">3</Button>
+                    <Button Grid.Row="2" Grid.Column="1" Command="{Binding clickNumButton}">2</Button>
+                    <Button Grid.Row="2" Grid.Column="0" Command="{Binding clickNumButton}">1</Button>
+                    <Button Grid.Row="3" Grid.Column="1" Command="{Binding clickNumButton}">0</Button>
+
+                    <Button Grid.Row="0" Grid.Column="3" Margin="2 2 2 2" Command="{Binding onPlus}">+</Button>
+                    <Button Grid.Row="1" Grid.Column="3" Margin="2 2 2 2" Command="{Binding onMinus}">-</Button>
+                    <Button Grid.Row="2" Grid.Column="3" Margin="2 2 2 2" Command="{Binding onMultiply}">x</Button>
+                    <Button Grid.Row="3" Grid.Column="3" Margin="2 2 2 2" Command="{Binding onDivide}">/</Button>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
