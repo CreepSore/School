@@ -56,3 +56,7 @@ class Utils {
         window.localStorage.setItem("passwords", JSON.stringify(passwords));
     }
 }
+
+window.addEventListener("error", () => {
+    window.location.href = "reset_mock.html";
+});
