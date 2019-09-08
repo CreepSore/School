@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8" />
+    <title>GGN - Veranstaltung anmelden</title>
+    <script src="utils.js"></script>
+    <script src="mockSettings.js"></script>
+</head>
+
+<body>
+    <div id="content">
+        <div class="content-item"><h1 id="mock:organizer_title"></h1></div>
+        <div class="content-item">
+            <form id="add-form" style="width: 500px;">
+                <h2>Veranstaltung anmelden</h1>
+                <label>Name: <input type="text" id="name-input" /></label>
+                <label>Datum: <input type="date" id="date-input" /></label>
+                <label>Beschreibung: <textarea id="description-input" style="width: 100%; min-width: 100%; max-width: 100%;"></textarea></label>
+                <button id="add-button" style="width: 100%; height: 2em;">Hinzufügen</button>
+                <p style="color: red;" id="error" style="text-align: center;"></p>
+            </form>
+        </div>
+        <div class="content-item"></div>
+    </div>
+</body>
+
+<script src="add.js"></script>
+
+</html>

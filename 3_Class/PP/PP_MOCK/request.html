@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8" />
+    <title>GGN - Einmal-Passwort anfordern</title>
+    <script src="utils.js"></script>
+    <script src="mockSettings.js"></script>
+</head>
+
+<body>
+    <div id="content">
+        <div class="content-item"></div>
+        <div class="content-item">
+            <form id="request-form">
+                <h2>Passwort anfordern</h1>
+                <label>Name: <input type="text" id="name-input" /></label>
+                <button id="request-button" style="width: 100%; height: 2em;">Anfordern</button>
+                <p style="color: green;" id="request-message" style="text-align: center;"></p>
+            </form>
+        </div>
+        <div class="content-item"></div>
+    </div>
+</body>
+
+<script src="request.js"></script>
+
+</html>
