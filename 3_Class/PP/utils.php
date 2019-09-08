@@ -24,7 +24,7 @@
                 $query = $dbcon->DoQuery("select * from `ActionCode` where code='$code'");
                 return $query && $query->fetch();
             };
-            
+
             switch($codeType) {
                 case 'URL': 
                     $code = '';
