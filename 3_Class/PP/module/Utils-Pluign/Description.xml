@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="eventmanagement" method="upgrade">
+	<name>Veranstaltungsmanagement</name>
+	<author>BS2 Linz</author>
+	<creationDate>September 2019</creationDate>
+	<copyright>Copyright (C) 2019 BS2 Linz</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>bs-linz2.post@ooe.gv.at</authorEmail>
+	<authorUrl>http://www.bs-linz2.ac.at</authorUrl>
+	<version>1.0.0</version>
+	<description>VAAbmelden test</description>
+	<files>
+		<filename>Description.xml</filename>
+		<filename plugin="plg_vamanagement">main.php</filename>
+
+		<folder>dependencies</folder>
+		<folder>mail_templates</folder>
+	</files>
+</extension>
