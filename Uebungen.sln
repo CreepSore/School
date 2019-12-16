@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.271
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uebung1", "2_Class\ITL\Uebungen\Uebung1\Uebung1.csproj", "{416738AD-CF88-49FC-9E27-0AEF9FE12269}"
 EndProject
@@ -80,6 +80,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "2_Class\ITL\Auftraege\Calculator\Calculator.csproj", "{34A85EBB-8351-4D39-8860-47819572F8BE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2_Class", "2_Class", "{1D2EA20B-C6F0-46E9-8957-27378B499A83}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extra", "Extra", "{4BBD3661-28AC-49A1-878F-C75A94669431}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSE", "POSE\POSE.csproj", "{DCF3B663-170C-4D3F-9D43-E2A7C43F04BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -365,6 +369,18 @@ Global
 		{34A85EBB-8351-4D39-8860-47819572F8BE}.Release|x64.Build.0 = Release|Any CPU
 		{34A85EBB-8351-4D39-8860-47819572F8BE}.Release|x86.ActiveCfg = Release|Any CPU
 		{34A85EBB-8351-4D39-8860-47819572F8BE}.Release|x86.Build.0 = Release|Any CPU
+		{DCF3B663-170C-4D3F-9D43-E2A7C43F04BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCF3B663-170C-4D3F-9D43-E2A7C43F04BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCF3B663-170C-4D3F-9D43-E2A7C43F04BB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DCF3B663-170C-4D3F-9D43-E2A7C43F04BB}.Debug|x64.Build.0 = Debug|Any CPU
+		{DCF3B663-170C-4D3F-9D43-E2A7C43F04BB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DCF3B663-170C-4D3F-9D43-E2A7C43F04BB}.Debug|x86.Build.0 = Debug|Any CPU
+		{DCF3B663-170C-4D3F-9D43-E2A7C43F04BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCF3B663-170C-4D3F-9D43-E2A7C43F04BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCF3B663-170C-4D3F-9D43-E2A7C43F04BB}.Release|x64.ActiveCfg = Release|Any CPU
+		{DCF3B663-170C-4D3F-9D43-E2A7C43F04BB}.Release|x64.Build.0 = Release|Any CPU
+		{DCF3B663-170C-4D3F-9D43-E2A7C43F04BB}.Release|x86.ActiveCfg = Release|Any CPU
+		{DCF3B663-170C-4D3F-9D43-E2A7C43F04BB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -408,6 +424,7 @@ Global
 		{AB3C785D-3748-45D2-9A25-F2283DDEFBE2} = {C321A156-F85F-492C-ACAF-436F19832003}
 		{B00F583E-BC77-42E8-83F9-71C938DEE4FC} = {33EE2A8F-FFB9-4E37-81B7-54542EC51D57}
 		{34A85EBB-8351-4D39-8860-47819572F8BE} = {B00F583E-BC77-42E8-83F9-71C938DEE4FC}
+		{DCF3B663-170C-4D3F-9D43-E2A7C43F04BB} = {4BBD3661-28AC-49A1-878F-C75A94669431}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {53EE0186-CA71-4805-8904-058A255BC450}
