@@ -58,6 +58,6 @@ class Utils {
 }
 
 window.onerror = function(message, source, lineno, colno, error) {
-    setTimeout(() => {window.location.href = "reset_mock.html"}, 500);
+    window.location.href = "reset_mock.html";
 	return false;
 };
